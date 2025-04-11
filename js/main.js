@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
     const body = document.body;
     
@@ -14,14 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-        body.classList.toggle('dark-theme');
+    // Add click event to all theme toggle buttons
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+            body.classList.toggle('dark-theme');
+        });
     });
 
     function updateThemeIcon(theme) {
