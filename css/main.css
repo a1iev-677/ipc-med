@@ -400,7 +400,8 @@ footer {
   padding: 80px 20px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .mobile-menu.active {
@@ -458,7 +459,6 @@ footer {
 
 .mobile-menu .theme-toggle {
   align-self: center;
-  margin-top: 20px;
 }
 
 /* Стили для Swiper */
