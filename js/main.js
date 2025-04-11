@@ -28,27 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
 
-    // Parallax effect for sections
-    const sections = document.querySelectorAll('section');
-    const header = document.querySelector('header');
-
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        
-        // Parallax effect for header
-        header.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-        
-        // Parallax effect for sections
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            
-            if (scrollPosition > sectionTop - window.innerHeight + sectionHeight / 2) {
-                section.style.transform = `translateY(${(scrollPosition - sectionTop) * 0.1}px)`;
-            }
-        });
-    });
-
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
