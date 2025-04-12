@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle functionality
     const themeToggles = document.querySelectorAll('.theme-toggle');
-    const themeIcon = document.querySelector('.theme-icon');
+    const themeIcons = document.querySelectorAll('.theme-icon');
     const body = document.body;
     
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon(savedTheme);
+        updateThemeIcons(savedTheme);
         if (savedTheme === 'dark') {
             body.classList.add('dark-theme');
         }
@@ -22,13 +22,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
+            updateThemeIcons(newTheme);
             body.classList.toggle('dark-theme');
         });
     });
 
-    function updateThemeIcon(theme) {
-        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    function updateThemeIcons(theme) {
+        themeIcons.forEach(icon => {
+            if (icon.classList.contains('sun-icon')) {
+                icon.style.display = theme === 'dark' ? 'block' : 'none';
+            }
+            if (icon.classList.contains('moon-icon')) {
+                icon.style.display = theme === 'dark' ? 'none' : 'block';
+            }
+        });
     }
 
     // Smooth scroll for navigation links

@@ -20,6 +20,11 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-image: url('../img/light-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .container {
@@ -30,12 +35,33 @@ body {
 
 /* Хедер */
 header {
-  /* background-color: var(--background-color); */
-  /* box-shadow: var(--shadow); */
-  background-image: url('../img/grid-bg.png');
+  background-color: var(--background-color);
+  box-shadow: var(--shadow);
+  width: 100%;
+  position: relative;
+  background-image: url('../img/grid-bg-light.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+[data-theme="dark"] header {
+  background-image: url('../img/grid-bg-dark.png');
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: -1;
+}
+
+[data-theme="dark"] header::before {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .company-name {
@@ -157,10 +183,14 @@ h2 {
 
 /* Секция "О нас" */
 #about {
-  background-image: url('../img/about-bg.png');
+  background-image: url('../img/about-bg-light.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+[data-theme="dark"] #about {
+  background-image: url('../img/about-bg-dark.png');
 }
 
 #about .section__inner {
@@ -228,10 +258,14 @@ h2 {
 /* Секция услуг */
 #services {
   /* background: var(--background-color); */
-  background-image: url('../img/grid-bg.png');
+  background-image: url('../img/grid-bg-light.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+[data-theme="dark"] #services {
+  background-image: url('../img/grid-bg-dark.png');
 }
 
 .swapper-container {
@@ -309,10 +343,14 @@ h2 {
 /* Секция контактов */
 #contacts {
   /* background-color: var(--light-gray); */
-  background-image: url('../img/contacts-bg.png');
+  background-image: url('../img/contacts-bg-light.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+[data-theme="dark"] #contacts {
+  background-image: url('../img/contacts-bg-dark.png');
 }
 
 #contacts .section__inner {
@@ -596,12 +634,12 @@ footer {
 }
 
 .moon-icon {
-  opacity: 0;
+  opacity: 1;
   filter: invert(1);
 }
 
 [data-theme="dark"] .sun-icon {
-  opacity: 0;
+  opacity: 1;
   filter: invert(0);
 }
 
@@ -947,4 +985,8 @@ footer {
     width: 24px;
     height: 24px;
   }
+}
+
+[data-theme="dark"] body {
+  background-image: url('../img/dark-bg.jpg');
 }
