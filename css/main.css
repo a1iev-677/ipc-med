@@ -15,7 +15,7 @@
 
 /* Общие стили */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -30,8 +30,17 @@ body {
 
 /* Хедер */
 header {
-  background-color: var(--background-color);
-  box-shadow: var(--shadow);
+  /* background-color: var(--background-color); */
+  /* box-shadow: var(--shadow); */
+  background-image: url('../img/grid-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.company-name {
+  font-size: 24px;
+  color: #DD0024;
 }
 
 .header-container {
@@ -148,7 +157,10 @@ h2 {
 
 /* Секция "О нас" */
 #about {
-  background-color: var(--light-gray);
+  background-image: url('../img/about-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #about .section__inner {
@@ -165,10 +177,14 @@ h2 {
 }
 
 .feature {
-  background: var(--background-color);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #606060;
+  backdrop-filter: blur(25px);
+
   padding: 30px;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  /* background: var(--background-color); */
+  /* box-shadow: var(--shadow); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -210,8 +226,12 @@ h2 {
 }
 
 /* Секция услуг */
-#services{
-  background: var(--background-color);
+#services {
+  /* background: var(--background-color); */
+  background-image: url('../img/grid-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .swapper-container {
@@ -237,10 +257,14 @@ h2 {
 }
 
 .service-card {
-  background: var(--background-color);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #606060;
+  backdrop-filter: blur(25px);
+  
   padding: 30px;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  /* background: var(--background-color); */
+  /* box-shadow: var(--shadow); */
   height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
@@ -284,7 +308,11 @@ h2 {
 
 /* Секция контактов */
 #contacts {
-  background-color: var(--light-gray);
+  /* background-color: var(--light-gray); */
+  background-image: url('../img/contacts-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #contacts .section__inner {
@@ -293,13 +321,17 @@ h2 {
 }
 
 .contact-info-block {
-  background: var(--background-color);
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #606060;
+  backdrop-filter: blur(25px);
+
   padding: 40px;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  /* background: var(--background-color);
+  box-shadow: var(--shadow); */
 }
 
-.contact-info-block h3{
+.contact-info-block h3 {
   margin-bottom: 10px;
 }
 
@@ -685,11 +717,12 @@ footer {
 /* Стили для логотипа */
 .logo-link {
   display: inline-block;
+  align-items: center;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .logo-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(2deg);
 }
 
 .logo-link::after {
@@ -705,10 +738,6 @@ footer {
   z-index: -1;
 }
 
-.logo-link:hover::after {
-  opacity: 0.1;
-}
-
 /* Улучшенные стили для социальных сетей в контактах */
 .social-contacts {
   display: grid;
@@ -718,14 +747,18 @@ footer {
 }
 
 .social-contact-link {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #606060;
+  backdrop-filter: blur(25px);
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   padding: 15px;
-  background: var(--background-color);
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  /* background: var(--background-color);
+  box-shadow: var(--shadow); */
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
@@ -869,7 +902,7 @@ footer {
     height: 24px;
   }
 
-  .contact-info-block h3{
+  .contact-info-block h3 {
     text-align: center;
   }
 
