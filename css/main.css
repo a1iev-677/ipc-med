@@ -183,14 +183,16 @@ h2 {
 
 /* Секция "О нас" */
 #about {
+  background-color: #fff;
   background-image: url('../img/about-bg-light.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 [data-theme="dark"] #about {
   background-image: url('../img/about-bg-dark.png');
+  background-color: #000;
 }
 
 #about .section__inner {
@@ -342,15 +344,15 @@ h2 {
 
 /* Секция контактов */
 #contacts {
-  /* background-color: var(--light-gray); */
   background-image: url('../img/contacts-bg-light.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 [data-theme="dark"] #contacts {
   background-image: url('../img/contacts-bg-dark.png');
+  background-color: #000;
 }
 
 #contacts .section__inner {
@@ -886,6 +888,12 @@ footer {
   h2 {
     font-size: 1.8rem;
     margin-bottom: 25px;
+  }
+
+  #about,
+  #contacts {
+    background-color: #fff;
+    background-size: cover;
   }
 
   .about-features {
