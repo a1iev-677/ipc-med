@@ -20,11 +20,15 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-image: url('../img/light-bg.jpg');
+  background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+[data-theme="dark"] body {
+  background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop');
 }
 
 .container {
@@ -39,14 +43,10 @@ header {
   box-shadow: var(--shadow);
   width: 100%;
   position: relative;
-  background-image: url('../img/grid-bg-light.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 [data-theme="dark"] header {
-  background-image: url('../img/grid-bg-dark.png');
+  background-color: var(--background-color);
 }
 
 header::before {
@@ -184,21 +184,46 @@ h2 {
 /* Секция "О нас" */
 #about {
   background-color: #fff;
-  background-image: url('../img/about-bg-light.png');
-  background-size: contain;
+  background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2074&auto=format&fit=crop');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
-[data-theme="dark"] #about {
-  background-image: url('../img/about-bg-dark.png');
-  background-color: #000;
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 #about .section__inner {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+}
+
+[data-theme="dark"] #about {
+  background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2074&auto=format&fit=crop');
+  background-color: #000;
+}
+
+[data-theme="dark"] #about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 0;
 }
 
 .about-features {
@@ -257,17 +282,39 @@ h2 {
   color: var(--secondary-color);
 }
 
-/* Секция услуг */
+/* Секция "Наши услуги" */
 #services {
-  /* background: var(--background-color); */
-  background-image: url('../img/grid-bg-light.png');
+  background-color: #fff;
+  background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+#services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
+}
+
+#services .section__inner {
+  position: relative;
+  z-index: 1;
 }
 
 [data-theme="dark"] #services {
-  background-image: url('../img/grid-bg-dark.png');
+  background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop');
+  background-color: #000;
+}
+
+[data-theme="dark"] #services::before {
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .swapper-container {
@@ -344,31 +391,51 @@ h2 {
 
 /* Секция контактов */
 #contacts {
-  background-image: url('../img/contacts-bg-light.png');
-  background-size: contain;
+  background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
-[data-theme="dark"] #contacts {
-  background-image: url('../img/contacts-bg-dark.png');
-  background-color: #000;
+#contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 0;
 }
 
 #contacts .section__inner {
+  position: relative;
+  z-index: 1;
   max-width: 600px;
   margin: 0 auto;
+}
+
+[data-theme="dark"] #contacts {
+  background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop');
+  background-color: #000;
+}
+
+[data-theme="dark"] #contacts::before {
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .contact-info-block {
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid #606060;
   backdrop-filter: blur(25px);
-
   padding: 40px;
   border-radius: 8px;
-  /* background: var(--background-color);
-  box-shadow: var(--shadow); */
+}
+
+[data-theme="dark"] .contact-info-block {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .contact-info-block h3 {
@@ -993,8 +1060,4 @@ footer {
     width: 24px;
     height: 24px;
   }
-}
-
-[data-theme="dark"] body {
-  background-image: url('../img/dark-bg.jpg');
 }
